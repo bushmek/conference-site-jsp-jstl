@@ -97,7 +97,13 @@
                     </c:if>
                     <c:if test="${conferences!=null }">
                     <c:forEach var = "conf" items="${conferences}">
-                        <p ><a href="./Confirm?confid=${conf.id}" class="badge badge-success">${conf.name}</a></p>
+                        <p><a href="./Confirm?confid=${conf.id}" class="badge badge-success">${conf.name}</a>
+                        <form action="./DeleteConference" method="POST">
+                        	<input type="hidden" name = "confid" value="${conf.id}"/>
+                            <button type="submit" style="border: none; background-color: rgba(1,1,1,0);"><i class="fa fa-times-circle" aria-hidden="true" style="font-size: 18px; color: red"></i></button>
+						
+						</form>
+                        </p>
                     </c:forEach>
                         </div>
                     <div class="jumbotron">
@@ -105,13 +111,24 @@
                     <h3>Список конференцій, на які ви зареєстровані:</h3>
                     <c:forEach var = "tese" items="${teses}">
                     	<c:if test="${tese.status==2}">
-                        <p><a href="" class="badge badge-success">${tese.name}</a></p>
+                        <p><a href="" class="badge badge-success">${tese.name}</a>
+                        </p>
                         </c:if>
                         <c:if test="${tese.status==0}">
-                        <p><a href="" class="badge badge-danger">${tese.name}</a></p>
+                        <p><a href="" class="badge badge-danger">${tese.name}</a>
+                            <form action="./DeleteTese" method="POST">
+                            <input type="hidden" name = "teseid" value="${tese.id}"/>
+                            <button type="submit" style="border: none; background-color: rgba(1,1,1,0);"><i class="fa fa-times-circle" aria-hidden="true" style="font-size: 18px; color: red"></i></button>
+                        	</form>
+                        </p>
                         </c:if>
                         <c:if test="${tese.status==1}">
-                        <p><a href="" class="badge badge-secondary">${tese.name}</a></p>
+                        <p><a href="" class="badge badge-secondary">${tese.name}</a>
+                            <form action="./DeleteTese" method="POST">
+                            <input type="hidden" name = "teseid" value="${tese.id}"/>
+                            <button type="submit" style="border: none; background-color: rgba(1,1,1,0);"><i class="fa fa-times-circle" aria-hidden="true" style="font-size: 18px; color: red"></i></button>
+                        	</form>
+                        </p>
                         </c:if>
                     </c:forEach>
                 </div>

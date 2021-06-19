@@ -224,4 +224,19 @@ public class Connect {
 		 return user;
 	}
 	
+public static void deleteTese(Connection conn,int id) throws IOException {
+        
+    	try{
+            String sql = "Delete From teses WHERE id = ?";
+            try(PreparedStatement preparedStatement = conn.prepareStatement(sql)){
+                preparedStatement.setInt(1, id);
+                preparedStatement.executeUpdate();
+            }
+    		
+    	}
+    catch(Exception ex){
+    		ex.printStackTrace();
+    	}
+	}
+	
 }

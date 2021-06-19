@@ -112,10 +112,10 @@
                                     <div class="leave-form">
                                         <h4>Хочете виступити на конференції? Залиште ваші тези у формі нижче:</h4>
                                         <c:if test="${userId!=null}">
-                                        <form action="./CreateTeses" method="POST">
-                                            <textarea name="teses" placeholder="Comment" rows="5"></textarea>
+                                        <form action="./Upload" method="POST" enctype="multipart/form-data">
                                             <input name="user" type="hidden" value="<%=session.getAttribute("userId")%>" />
                                             <input name="confId" type="hidden" value="${param.id}" />
+                                            <input name="file" type="file" accept=".pdf, .docx, .doc, .txt"/>
                                             <button type="submit" class="site-btn">Відправити</button>
                                         </form>
                                         </c:if>

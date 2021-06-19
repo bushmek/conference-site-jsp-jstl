@@ -1,6 +1,12 @@
 package servlets;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.Closeable;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.URLDecoder;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -18,8 +24,10 @@ import classes.Teses;
  */
 @WebServlet("/Confirm")
 public class Confirm extends HttpServlet {
+	
 	private static final long serialVersionUID = 1L;
        
+	 
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -36,6 +44,7 @@ public class Confirm extends HttpServlet {
 		ArrayList<Teses> teses = Connect.getAllTeses(Connect.getConnect(), id);
 		request.setAttribute("teses", teses);
 		request.setAttribute("size", teses.size());
+       
 		getServletContext().getRequestDispatcher("/confirm.jsp").forward(request, response);
 	}
 
@@ -46,4 +55,6 @@ public class Confirm extends HttpServlet {
 		doGet(request,response);
 	}
 
+	 
+	
 }

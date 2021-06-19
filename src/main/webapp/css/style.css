@@ -68,7 +68,7 @@ a:hover,
 a:focus {
 	text-decoration: none;
 	outline: none;
-	color: #fff;
+	color: white;
 }
 
 ul,
@@ -310,7 +310,9 @@ ol {
 }
 
 .logo img:hover {
-	transform: rotate(45deg);
+	transform: rotate(15deg);
+	filter: hue-rotate(145deg)
+	
 }
 
 .logo a {
@@ -418,19 +420,34 @@ ol {
 }
 
 .top-search {
-	font-size: 15px;
-	height: 50px;
-	width: 50px;
-	color: #ffffff;
+	font-size: 40px;
+	height: 70px;
+	width: 70px;
+	color: red;
 	background: #023e8a;
-	line-height: 50px;
+	line-height: 70px;
 	text-align: center;
 	cursor: pointer;
 	float: right;
 	margin: 19px 0 16px;
 	border: 0px solid black;
-	border-radius: 25px;
+	border-radius: 50%;
+	margin-right: 10px;
+	transition: all 0.25s ease;
 }
+
+.top-search:hover {
+	transform: scale(1.15);
+}
+
+.top-search a {
+	color: white;
+	transition: all 0.25s ease;
+}
+.top-search:hover a {
+	color: yellowgreen;
+}
+
 
 .slicknav_menu {
 	display: none;
@@ -710,6 +727,7 @@ ol {
 	-ms-flex-pack: center;
 	justify-content: center;
 	overflow: hidden;
+	border: none
 	
 }
 
@@ -2904,4 +2922,8 @@ ol {
 		font-size: 36px;
 		line-height: normal;
 	}
+}
+
+i {
+	font-size: 36px;
 }

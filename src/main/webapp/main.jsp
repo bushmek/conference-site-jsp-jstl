@@ -2,9 +2,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 
-
-
-
 <!DOCTYPE html>
 <html lang="ua">
 <head>
@@ -20,7 +17,7 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="<c:url value="/css/style.css"/>" type="text/css">
     <link rel="icon" href="img/logo.svg" type="image/x-icon"/>
 </head>
 
@@ -85,13 +82,13 @@
                             <div class="hs-text">
                                 <h2>Сайт конференцій</h2>
                                 <p></p>
-                                <a href="./Fill" class="primary-btn">Переглянути конференції</a>
+                                <a href="#konf" class="primary-btn">Переглянути конференції</a>
                             </div>
                         </div>
-                    </div>
+                    </div>	
                 </div>
             </div>
-            <div class="hs-item set-bg" data-setbg="https://images.unsplash.com/photo-1527261834078-9b37d35a4a32?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80">
+            <div class="hs-item set-bg" data-setbg="https://variety.com/wp-content/uploads/2019/01/20181102_carlton-beener_blizzcon2018_awc_00490.jpg">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
@@ -143,7 +140,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="section-title">
+                    <div class="section-title" id="konf">
                         <h2>Конференції</h2>
                     </div>
                     <div class="filter-controls">
@@ -164,15 +161,14 @@
                 <div class="col-lg-12 p-0">
                  <div class="portfolio-filter"> 
         <c:forEach var="conf" items="${conferences}">
-                                      
-                            <div class="pf-item set-bg ${conf.category}" data-setbg="${conf.photo}"> <!-- category class -->
-                                <a class="pf-icon" href="./OneConference?id=${conf.id}"><span class="icon_plus"></span></a>
+						<a href="./OneConference?id=${conf.id}" class="pf-icon">
+                           <div class="pf-item set-bg ${conf.category}" data-setbg="${conf.photo}"> <!-- category class -->
                                 <div class="pf-text">
                                     <h4>${conf.name}</h4>
                                     <span>${conf.convertCategory}</span>
                                 </div>
                             </div>
-                
+ 							</a>
         </c:forEach>
          </div>
     </div>

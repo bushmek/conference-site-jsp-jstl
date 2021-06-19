@@ -96,7 +96,7 @@
 		<c:forEach var = "tese" items="${teses}">
             <div class="jumbotron">
             <div class="col-lg-12">
-                <h3>${tese.text}</h3>
+                <h3><a href="file/${tese.text}">Скачати файл</a></h3>
             </div>
             
                 <div class="col-lg-12 ">
